@@ -35,6 +35,70 @@ namespace simpleCalculator
             Thread.Sleep(2000);
 
             Console.WriteLine("           o     |                             '                 \r\n       +       - o -                               +        '   o\r\n           |_    |                  |    .         . .           \r\n           |         .            --o--                   +.   ' \r\n     '                              |                            \r\n                +                         . *    .               \r\n                                                                 \r\n                      |                     |   +                \r\n       + *       .   -o-  '               - o -   ' .            \r\n           '       .  |              o      |                  . \r\n           o                                         '           \r\n .     |                       *                         +       \r\n      -+-                                . *        . .     .o   \r\n       |                       +                 '               \r\n       ..                   .  *+                                ");
+
+            for (int i = 0; i < 65; i++)
+            {
+                Thread.Sleep(50); 
+                Console.Write("-");
+            }
+
+            Console.WriteLine();
+
+            for (int i = 0; i < 3; i++)
+            {
+                Thread.Sleep(1000);
+                Console.Write(".");
+            }
+
+            Console.WriteLine();
+            Thread.Sleep(1000);
+            Console.WriteLine("7 Stars are born every year");
+
+            Console.WriteLine();
+            char[] writeLife = { 'L', 'i', 'f', 'e' , ' ' , 'I' , 's' , ' ' , 'E', 'v', 'e', 'r' , ' ', 'E', 'x', 'p', 'a', 'n', 'd', 'i', 'n', 'g'}; //Array for witing life
+            int[] lifeDelay = { 1000, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100}; //Array for the delays
+            for (int i = 0; i < writeLife.Length; i++) 
+            { 
+                Thread.Sleep(lifeDelay[i]);
+                Console.Write(writeLife[i]);
+            }
+
+            Console.WriteLine();
+
+            for (int i = 0; i < 3; i++)
+            {
+                Thread.Sleep(1000);
+                Console.Write(".");
+            }
+
+            Thread.Sleep(1000);
+            Console.WriteLine();
+            Console.WriteLine("No matter how much hope is lost");
+            Console.WriteLine();
+
+            for (int i = 0; i < 3; i++)
+            {
+                Thread.Sleep(1000);
+                Console.Write(".");
+            }
+
+            Thread.Sleep(1000);
+            Console.WriteLine();
+            Console.WriteLine("There is always some hope somewhere out there");
+            Console.WriteLine();
+
+            for (int i = 0; i < 3; i++)
+            {
+                Thread.Sleep(1000);
+                Console.Write(".");
+            }
+
+            Thread.Sleep(1000);
+            Console.WriteLine();
+            startMessage();
+            mathCalc();
+            
+
         }
 
         static void mathCalc() //Calculates the inputted value
