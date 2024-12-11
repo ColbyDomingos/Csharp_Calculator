@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace simpleCalculator
@@ -23,25 +24,33 @@ namespace simpleCalculator
             Console.WriteLine("-> Remainder (%)");
         }
 
-        static void storyStart()
+        static void storyStart() //Short story with a secret char
         {
-            
+            for (int i = 0; i < 3; i++) 
+            {
+                Thread.Sleep(1000); //Sleeps 1000 miliseconds then adds
+                Console.Write(".");
+            }
+            Console.WriteLine();
+            Thread.Sleep(2000);
 
             Console.WriteLine("           o     |                             '                 \r\n       +       - o -                               +        '   o\r\n           |_    |                  |    .         . .           \r\n           |         .            --o--                   +.   ' \r\n     '                              |                            \r\n                +                         . *    .               \r\n                                                                 \r\n                      |                     |   +                \r\n       + *       .   -o-  '               - o -   ' .            \r\n           '       .  |              o      |                  . \r\n           o                                         '           \r\n .     |                       *                         +       \r\n      -+-                                . *        . .     .o   \r\n       |                       +                 '               \r\n       ..                   .  *+                                ");
         }
 
         static void mathCalc() //Calculates the inputted value
         {
-            while (true)
+            string op = Console.ReadLine(); //Takes in the operator
+
+            while (op != "s")
             {
                 double num3 = 0; //Initializes the variable to change later
-
-                string op = Console.ReadLine(); //Takes in the operator
+                
                 char operation = Convert.ToChar(op); //Switches it to a char for easy access
 
                 if (op == "" || op == " ")
                 {
                     Console.WriteLine("Try again");
+                    mathCalc();
                 }
 
                 Console.WriteLine("Enter your first number: ");
@@ -79,10 +88,8 @@ namespace simpleCalculator
                         num3 = num1 % num2;
                         Console.WriteLine("Your answer is: " + num3);
                         break;
-                    case 's':
-                        storyStart();
-                        break;
-                }
+                } 
+                
 
                 //Asks for a restart
                 Console.WriteLine("");
@@ -124,6 +131,11 @@ namespace simpleCalculator
                         mathCalc();
                         break;
                 }
+            }
+
+            if (op == "s")
+            {
+                storyStart();
             }
 
         }
